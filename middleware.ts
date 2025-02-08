@@ -13,7 +13,14 @@ export async function middleware(Request:NextRequest) {
     
        
        if(paths.includes(path) && auth){
-        return NextResponse.redirect(new URL("/",Request.url))
+        return NextResponse.redirect(new URL("/dasboard",Request.url))
+       }
+
+       if(path=='/' && !auth){
+        return NextResponse.redirect(new URL("/login",Request.url))
+       }
+       else if(path=='/' && auth){
+        return NextResponse.redirect(new URL("/dasboard",Request.url))
        }
 
        if(path.includes("dashboard")&&!auth){
