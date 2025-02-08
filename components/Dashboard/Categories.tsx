@@ -26,7 +26,7 @@ async function Box({icon,label,amount,link}:{icon:any,label:string,amount:number
             
             <p className='text-gray-400 text-sm'>{label}</p>
             <h1 className='text-gray-400 text-xl font-bold flex items-center'>
-                <span>{data.total_sum??amount}</span>
+                <span>{data?.total_sum??amount}</span>
                 <span><TbCurrencyTaka/></span>
             </h1>
         </div>
